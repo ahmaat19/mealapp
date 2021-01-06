@@ -1,7 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
+import { CATEGORIES } from '../data/dummy-data'
 
 const CategoryMealScreen = ({ navigation }) => {
+  const catId = navigation.getParam('categoryId')
+  const selectedCategory = CATEGORIES.find((cat) => cat.id === catId)
   return (
     <View style={styles.screen}>
       <Text>The CategoryMeal Screen</Text>
@@ -16,6 +19,10 @@ const CategoryMealScreen = ({ navigation }) => {
 }
 
 export default CategoryMealScreen
+
+CategoryMealScreen.navigationOptions = {
+  headerTitle: 'Helo',
+}
 
 const styles = StyleSheet.create({
   screen: {
